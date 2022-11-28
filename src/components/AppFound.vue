@@ -9,13 +9,13 @@ export default {
 
 <template>
   <div class="found">
-    <p>Found {{ info.length }} characters</p>
+    <span>Found {{ info.length }} characters</span>
   </div>
 </template>
 
 <style scoped lang="scss">
 .found {
-  padding: 10px;
+  padding: 10px 30px;
   color: #fff;
   background-color: #10161d;
 }

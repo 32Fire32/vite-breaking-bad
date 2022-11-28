@@ -9,20 +9,7 @@ export default {
 </script>
 
 <template>
-  <main class="container">
-    <form>
-      <div>
-        <select
-          class="form-select w-auto"
-          id="floatingSelect"
-          aria-label="Floating label select example"
-        >
-          <option selected>Select Category</option>
-          <option value="1">Breaking Bad</option>
-          <option value="2">Better Call Saul</option>
-        </select>
-      </div>
-    </form>
+  <main class="container mt-5">
     <AppCharacters />
   </main>
 </template>
