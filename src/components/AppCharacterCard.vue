@@ -1,18 +1,21 @@
 <script>
 export default {
   name: "AppCharactersCard",
+  props: {
+    info: Object,
+  },
 };
 </script>
 
 <template>
   <div class="text-center">
-    <img class="img-fluid" src="" alt="" />
-    <h3>CardTitle</h3>
+    <img class="img-fluid" :src="info.img" :alt="info.name" />
+    <h3>{{ info.name }}</h3>
     <div class="category">
-      <span>Category</span>
+      <span>{{ info.category }}</span>
     </div>
     <div class="status">
-      <small>Status</small>
+      <small>{{ info.status }}</small>
     </div>
   </div>
 </template>
@@ -21,7 +24,7 @@ export default {
 .text-center {
   height: 300px;
   width: 300px;
-  border: 1px solid red;
+  background-color: var(--primary-color);
 }
 
 h3 {

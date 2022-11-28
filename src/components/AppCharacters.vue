@@ -15,22 +15,23 @@ export default {
     axios
       .get("https://www.breakingbadapi.com/api/characters")
       .then((response) => {
-        console.log(response);
-        // this.characters = response.data.results;
+        console.log(response.data);
+        this.characters = response.data;
       });
   },
 };
 </script>
 
 <template>
-  <section class="container">
+  <section class="container p-5">
     <div class="row">
-      <AppCharacterCard class="col-sm-6 col lg-3" />
-      <AppCharacterCard class="col-sm-6 col lg-3" />
-      <AppCharacterCard class="col-sm-6 col lg-3" />
-      <AppCharacterCard class="col-sm-6 col lg-3" />
+      <AppCharacterCard v-for="character in characters" :info="character" />
     </div>
   </section>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.container {
+  background-color: var(--secondary-color);
+}
+</style>
