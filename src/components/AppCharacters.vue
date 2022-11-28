@@ -1,10 +1,12 @@
 <script>
 import axios from "axios";
 import AppCharacterCard from "./AppCharacterCard.vue";
+import AppFound from "./AppFound.vue";
 export default {
   name: "AppCharacters",
   components: {
     AppCharacterCard,
+    AppFound,
   },
   data() {
     return {
@@ -15,7 +17,7 @@ export default {
     axios
       .get("https://www.breakingbadapi.com/api/characters")
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data.length);
         this.characters = response.data;
       });
   },
@@ -23,7 +25,8 @@ export default {
 </script>
 
 <template>
-  <section class="container p-5">
+  <section class="container p-5 my-3">
+    <AppFound :info="characters" />
     <div class="row">
       <AppCharacterCard v-for="character in characters" :info="character" />
     </div>
