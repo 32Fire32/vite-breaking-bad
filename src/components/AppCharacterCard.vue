@@ -9,30 +9,49 @@ export default {
 
 <template>
   <div class="text-center">
-    <img class="img-fluid" :src="info.img" :alt="info.name" />
-    <h3>{{ info.name }}</h3>
-    <div class="category">
-      <span>{{ info.category }}</span>
+    <div class="image">
+      <img :src="info.img" :alt="info.name" />
     </div>
-    <div class="status">
-      <small>{{ info.status }}</small>
+
+    <div class="infoCharacters">
+      <div class="name">
+        <h5>{{ info.name }}</h5>
+      </div>
+      <div class="category">
+        <span>{{ info.category }}</span>
+      </div>
+      <div class="status">
+        <small>{{ info.status }}</small>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .text-center {
-  height: 300px;
-  width: 300px;
+  width: calc(100% / 6);
+  margin: 20px;
+  padding: 10px;
   background-color: var(--primary-color);
-}
 
-h3 {
-  color: var(--secondary-color);
-}
+  h5 {
+    color: var(--secondary-color);
+  }
 
-span,
-small {
-  color: gray;
+  span,
+  small {
+    color: gray;
+  }
+
+  img {
+    width: 100%;
+    max-height: 70%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .infoCharacters {
+    max-height: 30%;
+  }
 }
 </style>
