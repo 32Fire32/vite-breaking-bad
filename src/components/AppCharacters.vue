@@ -1,4 +1,5 @@
 <script>
+import axios from "axios";
 import AppCharacterCard from "./AppCharacterCard.vue";
 export default {
   name: "AppCharacters",
@@ -10,11 +11,14 @@ export default {
       characters: [],
     };
   },
-  // created() {
-  //   axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => {
-  //     this.characters = resp.data.results;
-  //   });
-  // },
+  created() {
+    axios
+      .get("https://www.breakingbadapi.com/api/characters")
+      .then((response) => {
+        console.log(response);
+        // this.characters = response.data.results;
+      });
+  },
 };
 </script>
 
