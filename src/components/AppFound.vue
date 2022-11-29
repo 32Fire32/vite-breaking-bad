@@ -1,19 +1,12 @@
 <script>
-import { store } from "../store.js";
-
 export default {
   name: "AppFound",
   props: {
     info: Object,
   },
-  data() {
-    return {
-      store,
-    };
-  },
   methods: {
     isLong() {
-      return this.store.characters.length;
+      return this.info.length;
     },
   },
 };
