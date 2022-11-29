@@ -29,11 +29,7 @@ export default {
     },
   },
   created() {
-    axios
-      .get("https://www.breakingbadapi.com/api/characters")
-      .then((response) => {
-        this.store.characters = response.data;
-      });
+    this.apiChar();
   },
 };
 </script>
