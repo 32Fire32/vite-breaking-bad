@@ -24,7 +24,7 @@ export default {
   <AppLoading :class="{ hide: store.hiding }" />
   <section class="container p-5 my-3" :class="{ hide: !store.hiding }">
     <AppFound :info="store.characters" />
-    <div class="row justify-content-between">
+    <div class="row justify-content-around">
       <AppCharacterCard
         v-for="(character, index) in store.characters"
         :name="character.name"
