@@ -25,6 +25,7 @@ export default {
         })
         .then((resp) => {
           this.store.characters = resp.data;
+          store.hiding = true;
         });
     },
   },

@@ -15,15 +15,14 @@ export default {
   data() {
     return {
       store,
-      hiding: true,
     };
   },
 };
 </script>
 
 <template>
-  <AppLoading :class="{ hide: hiding }" />
-  <section class="container p-5 my-3" :class="{ hide: !hiding }">
+  <AppLoading :class="{ hide: store.hiding }" />
+  <section class="container p-5 my-3" :class="{ hide: !store.hiding }">
     <AppFound :info="store.characters" />
     <div class="row">
       <AppCharacterCard

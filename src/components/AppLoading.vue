@@ -9,20 +9,24 @@ export default {
     <div class="col-xs-12">
       <h3>LOADING...</h3>
     </div>
-    <div class="col-xs-12">
+    <div class="col-xs-12 mt-5">
       <i class="ex-11-icon fas fa-circle-notch"></i>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.ex-11-icon:hover {
-  animation-name: spin-inverse;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+.row {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  text-align: center;
+  .ex-11-icon {
+    animation-name: spin-inverse;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
 }
-
 @keyframes spin-inverse {
   0% {
     transform: rotate(0deg);
