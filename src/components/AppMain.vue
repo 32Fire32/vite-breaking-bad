@@ -21,6 +21,7 @@ export default {
         .get("https://www.breakingbadapi.com/api/characters", {
           params: {
             category: this.store.cat,
+            // status: this.store.status,
           },
         })
         .then((resp) => {
