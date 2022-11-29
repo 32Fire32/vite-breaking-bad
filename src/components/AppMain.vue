@@ -1,15 +1,46 @@
 <script>
+import axios from "axios";
+import { store } from "../store.js";
+
 import AppCharacters from "./AppCharacters.vue";
+import AppForm from "./AppForm.vue";
 export default {
   name: "AppMain",
   components: {
     AppCharacters,
+    AppForm,
+  },
+  data() {
+    return {
+      store,
+    };
+  },
+  methods: {
+    apiChar() {
+      axios
+        .get("https://www.breakingbadapi.com/api/characters", {
+          params: {
+            category: this.store.cat,
+          },
+        })
+        .then((resp) => {
+          this.store.characters = resp.data;
+        });
+    },
+  },
+  created() {
+    axios
+      .get("https://www.breakingbadapi.com/api/characters")
+      .then((response) => {
+        this.store.characters = response.data;
+      });
   },
 };
 </script>
 
 <template>
   <main class="container mt-5">
+    <AppForm @search="apiChar" />
     <AppCharacters />
   </main>
 </template>

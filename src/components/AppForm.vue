@@ -1,8 +1,12 @@
 <script>
+import { store } from "../store.js";
+
 export default {
   name: "AppForm",
-  props: {
-    info: Object,
+  data() {
+    return {
+      store,
+    };
   },
 };
 </script>
@@ -14,21 +18,15 @@ export default {
         class="form-select w-auto"
         id="floatingSelect"
         aria-label="Floating label select example"
-        v-model="category"
-        ;
+        v-model="store.cat"
+        @click="$emit('search')"
       >
-        <option selected>Select Category</option>
-        <option value="1">Breaking Bad</option>
-        <option value="2">Better Call Saul</option>
+        <option value="" selected>Select Category</option>
+        <option value="Breaking Bad">Breaking Bad</option>
+        <option value="Better Call Saul">Better Call Saul</option>
       </select>
     </div>
   </form>
 </template>
 
-<style scoped lang="scss">
-form {
-  position: absolute;
-  top: -50px;
-  left: 0;
-}
-</style>
+<style scoped lang="scss"></style>

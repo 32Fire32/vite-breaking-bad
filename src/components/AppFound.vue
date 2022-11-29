@@ -1,15 +1,27 @@
 <script>
+import { store } from "../store.js";
+
 export default {
   name: "AppFound",
   props: {
     info: Object,
+  },
+  data() {
+    return {
+      store,
+    };
+  },
+  methods: {
+    isLong() {
+      return this.store.characters.length;
+    },
   },
 };
 </script>
 
 <template>
   <div class="found">
-    <span>Found {{ info.length }} characters</span>
+    <span>Found {{ isLong() }} characters</span>
   </div>
 </template>
 
