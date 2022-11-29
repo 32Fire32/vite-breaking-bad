@@ -24,10 +24,13 @@ export default {
   <AppLoading :class="{ hide: store.hiding }" />
   <section class="container p-5 my-3" :class="{ hide: !store.hiding }">
     <AppFound :info="store.characters" />
-    <div class="row">
+    <div class="row justify-content-between">
       <AppCharacterCard
         v-for="(character, index) in store.characters"
-        :info="character"
+        :name="character.name"
+        :img="character.img"
+        :category="character.category"
+        :status="character.status"
       />
     </div>
   </section>
@@ -35,13 +38,7 @@ export default {
 
 <style scoped lang="scss">
 .container {
-  form {
-    position: absolute;
-    top: -50px;
-    left: 0;
-  }
   background-color: var(--secondary-color);
-  position: relative;
 }
 .hide {
   display: none;
